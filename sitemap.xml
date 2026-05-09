@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
+  <url>
+    <loc>https://landing.shyphan.ae/</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://landing.shyphan.ae/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://landing.shyphan.ae/ar/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landing.shyphan.ae/" />
+    <image:image>
+      <image:loc>https://landing.shyphan.ae/assets/og/zoho-certified-partner-1200x630.png</image:loc>
+      <image:title>Best Zoho Partner in Dubai &amp; UAE — Shyphan AI Middle East</image:title>
+      <image:caption>Zoho Authorized Partner serving Dubai, Abu Dhabi, Sharjah and all 7 emirates</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://landing.shyphan.ae/ar/</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://landing.shyphan.ae/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://landing.shyphan.ae/ar/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landing.shyphan.ae/" />
+    <image:image>
+      <image:loc>https://landing.shyphan.ae/assets/og/zoho-certified-partner-1200x630.png</image:loc>
+      <image:title>أفضل شريك زوهو في دبي والإمارات — راقمية للتقنية</image:title>
+    </image:image>
+  </url>
+</urlset>

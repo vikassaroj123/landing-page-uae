@@ -1,0 +1,37 @@
+# robots.txt for landing.shyphan.ae
+# Best Zoho Partner in Dubai & UAE — Shyphan AI Middle East FZ-LLC
+
+User-agent: *
+Allow: /
+
+# Block backups and dev artifacts
+Disallow: /*.bak$
+Disallow: /best-zoho-partner-in-uae.html
+Disallow: /zoho-partner-uae-ar.html
+
+# Sitemap
+Sitemap: https://landing.shyphan.ae/sitemap.xml
+
+# Common bots — explicitly allow Google, Bing, Yandex, DuckDuckGo
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Block aggressive scrapers / AI training crawlers (uncomment to enforce)
+# User-agent: GPTBot
+# Disallow: /
+# User-agent: CCBot
+# Disallow: /
+# User-agent: ClaudeBot
+# Disallow: /

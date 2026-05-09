@@ -1,0 +1,227 @@
+/**
+ * Dubai landing pages – UI enhancements
+ * Refines typography, shadows, transitions, and focus states across all landing-page-dubai pages.
+ */
+
+/* ---- Full white background ---- */
+body,
+.page_wrapper {
+    background-color: #ffffff !important;
+}
+
+/* Remove wave shape after header/banner */
+.banner_section::after {
+    display: none !important;
+}
+
+/* ---- Variables (extend theme) ---- */
+:root {
+    --shadow-sm: 0 2px 8px rgba(106, 73, 242, 0.08);
+    --shadow-md: 0 8px 24px rgba(50, 35, 111, 0.12);
+    --shadow-lg: 0 16px 48px rgba(50, 35, 111, 0.14);
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 20px;
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---- Selection ---- */
+::selection {
+    background: rgba(106, 73, 242, 0.2);
+    color: var(--dark-purple, #32236F);
+}
+
+/* ---- Header ---- */
+header {
+    transition: box-shadow var(--transition-smooth), background-color var(--transition-smooth);
+}
+
+header.fixed {
+    box-shadow: var(--shadow-sm);
+}
+
+.navbar-expand-lg .navbar-nav .nav-link.dark_btn {
+    transition: transform var(--transition-fast), box-shadow var(--transition-smooth);
+}
+
+.navbar-expand-lg .navbar-nav .nav-link.dark_btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(106, 73, 242, 0.4);
+}
+
+/* ---- Banner ---- */
+.banner_section .banner_text h1 {
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+
+.banner_section .banner_text p {
+    color: var(--body-text-purple, #3E3F66);
+    opacity: 0.95;
+}
+
+.banner_section .app_btn li a {
+    border-radius: var(--radius-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-smooth), background-color 0.3s ease;
+}
+
+.banner_section .app_btn li a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(106, 73, 242, 0.3);
+}
+
+/* Form box (banner CTA) */
+.banner_form_box {
+    box-shadow: var(--shadow-md) !important;
+    border: 1px solid rgba(106, 73, 242, 0.08);
+    transition: box-shadow var(--transition-smooth);
+}
+
+.banner_form_box:hover {
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.banner_form .form-control {
+    border-radius: var(--radius-sm) !important;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast) !important;
+}
+
+.banner_form .form-control:focus {
+    border-color: var(--purple, #6A49F2) !important;
+    box-shadow: 0 0 0 3px rgba(106, 73, 242, 0.15) !important;
+}
+
+.banner_form .btn-primary {
+    border-radius: var(--radius-sm) !important;
+    transition: transform var(--transition-fast), box-shadow var(--transition-smooth) !important;
+}
+
+.banner_form .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(106, 73, 242, 0.35);
+}
+
+/* ---- Section titles ---- */
+.section_title h2 {
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+}
+
+.section_title p {
+    opacity: 0.9;
+}
+
+/* ---- Buttons (global) ---- */
+.puprple_btn,
+.white_btn {
+    transition: transform var(--transition-fast), box-shadow var(--transition-smooth);
+}
+
+.puprple_btn:hover,
+.white_btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(106, 73, 242, 0.25);
+}
+
+/* ---- Feature boxes / cards ---- */
+.feature_box {
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.feature_box:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.card {
+    border-radius: var(--radius-md) !important;
+    border: 1px solid rgba(106, 73, 242, 0.08);
+    transition: box-shadow var(--transition-smooth);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-sm);
+}
+
+.faq_section .faq_panel .card {
+    overflow: hidden;
+}
+
+.faq_section .faq_panel .card-header {
+    border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
+}
+
+/* ---- Form controls (global) ---- */
+.form-control {
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast) !important;
+}
+
+.form-control:focus {
+    border-color: var(--purple, #6A49F2);
+    box-shadow: 0 0 0 3px rgba(106, 73, 242, 0.12);
+}
+
+/* ---- Footer ---- */
+footer .top_footer {
+    position: relative;
+}
+
+footer .top_footer .social_media li a {
+    transition: transform var(--transition-fast), background-color 0.3s ease, color 0.3s ease;
+}
+
+footer .top_footer .social_media li a:hover {
+    transform: translateY(-3px);
+}
+
+footer .links ul li a {
+    transition: opacity var(--transition-fast), padding-left var(--transition-fast);
+}
+
+footer .links ul li a:hover {
+    opacity: 0.9;
+    padding-left: 4px;
+}
+
+footer .bottom_footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ---- Go to top button ---- */
+.go_top {
+    border-radius: 50%;
+    transition: opacity 0.3s ease, transform var(--transition-fast);
+}
+
+.go_top:hover {
+    transform: translateY(-2px);
+}
+
+/* ---- WhatsApp float (already in page) – small refinement ---- */
+.wa-float {
+    border-radius: 50%;
+}
+
+/* ---- Trusted / logo section ---- */
+.trusted_section .company_logos .logo img {
+    transition: opacity var(--transition-fast);
+}
+
+.trusted_section .company_logos .logo:hover img {
+    opacity: 0.85;
+}
+
+/* ---- Responsive tweaks ---- */
+@media (max-width: 991px) {
+    .banner_form_box {
+        box-shadow: var(--shadow-md) !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .section_title h2 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+}

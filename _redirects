@@ -1,0 +1,10 @@
+# Netlify / Cloudflare Pages — _redirects
+# 301 old filenames to clean URLs (SEO-safe — preserves backlink equity)
+
+/best-zoho-partner-in-uae.html  /            301
+/zoho-partner-uae-ar.html       /ar/         301
+/index.html                     /            301
+/ar/index.html                  /ar/         301
+
+# Optional: redirect www to bare domain
+# https://www.landing.shyphan.ae/*  https://landing.shyphan.ae/:splat  301!

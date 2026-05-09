@@ -1,0 +1,70 @@
+# landing.shyphan.ae — Apache config
+# Handles HTTPS, www→non-www, old-filename redirects, clean URLs, gzip/cache.
+
+RewriteEngine On
+
+# 1) Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2) Force non-www (canonicalize on bare landing.shyphan.ae)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# 3) 301 redirect old filenames to clean URLs (preserves any existing backlinks)
+RewriteRule ^best-zoho-partner-in-uae\.html$ / [R=301,L]
+RewriteRule ^zoho-partner-uae-ar\.html$ /ar/ [R=301,L]
+
+# 4) Hide .html extension if anyone links with /index — make / canonical
+RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/ar/index\.html[\s?] [NC]
+RewriteRule ^ar/index\.html$ /ar/ [R=301,L]
+
+# 5) Custom 404 (optional — comment out if you don't want)
+# ErrorDocument 404 /index.html
+
+# ---- Performance: gzip & brotli ----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml application/ld+json
+</IfModule>
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml application/ld+json
+</IfModule>
+
+# ---- Cache headers ----
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType text/html "access plus 1 hour"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/png "access plus 6 months"
+  ExpiresByType image/jpeg "access plus 6 months"
+  ExpiresByType image/webp "access plus 6 months"
+  ExpiresByType image/svg+xml "access plus 6 months"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+</IfModule>
+
+# ---- Security headers ----
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
+
+# ---- MIME types ----
+<IfModule mod_mime.c>
+  AddType application/json .json
+  AddType application/ld+json .jsonld
+  AddType application/xml .xml
+  AddType image/svg+xml .svg
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+</IfModule>
