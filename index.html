@@ -72,7 +72,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Font Awesome loaded async (non-render-blocking). Icons swap in shortly after first paint. -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+
+    <!-- Preload above-fold logo for fastest LCP -->
+    <link rel="preload" as="image" href="/images/logo-color.png" fetchpriority="high">
 
     <script type="application/ld+json">
     {
@@ -314,6 +319,12 @@
         }
         /* All scroll-reveal elements visible immediately (AOS disabled) */
         [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+        /* Skip rendering offscreen below-fold sections until they scroll near viewport — major perf win */
+        .compare-section, .services-section, .process-section, .industries-section,
+        .testimonials-section, .faq-section, .areas-section, footer {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 800px;
+        }
         ::selection { background: rgba(70, 138, 199, .18); color: var(--c-dark); }
         h1, h2, h3, h4, h5 { font-weight: 800; letter-spacing: -.02em; color: var(--c-dark); }
         a { text-decoration: none; }
@@ -845,7 +856,7 @@
         <div class="container">
             <div class="nav-row">
                 <a href="/" class="brand-left" aria-label="Shyphan AI Middle East FZ-LLC">
-                    <img src="/images/logo-color.png" alt="Shyphan AI Middle East FZ-LLC">
+                    <img src="/images/logo-color.png" alt="Shyphan AI Middle East FZ-LLC" fetchpriority="high" decoding="async" width="180" height="48">
                     <span class="brand-divider"></span>
                     <span class="brand-tag">Zoho Partner<br>UAE</span>
                 </a>
@@ -1040,8 +1051,8 @@
             <p class="text-center mb-4" style="color: var(--c-muted); font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;">Trusted by leading organizations across the UAE</p>
             <div class="marquee-wrap">
                 <div class="marquee">
-                    <img src="/clients/logo1.jpg" alt=""><img src="/clients/logo10.jpg" alt=""><img src="/clients/logo11.jpg" alt=""><img src="/clients/logo12.jpg" alt=""><img src="/clients/logo13.jpg" alt=""><img src="/clients/logo14.jpg" alt=""><img src="/clients/logo15.jpg" alt=""><img src="/clients/logo16.jpg" alt=""><img src="/clients/logo17.jpg" alt=""><img src="/clients/logo18.jpg" alt=""><img src="/clients/logo19.jpg" alt=""><img src="/clients/logo20.jpg" alt="">
-                    <img src="/clients/logo1.jpg" alt=""><img src="/clients/logo10.jpg" alt=""><img src="/clients/logo11.jpg" alt=""><img src="/clients/logo12.jpg" alt=""><img src="/clients/logo13.jpg" alt=""><img src="/clients/logo14.jpg" alt=""><img src="/clients/logo15.jpg" alt=""><img src="/clients/logo16.jpg" alt=""><img src="/clients/logo17.jpg" alt=""><img src="/clients/logo18.jpg" alt=""><img src="/clients/logo19.jpg" alt=""><img src="/clients/logo20.jpg" alt="">
+                    <img loading="lazy" decoding="async" src="/clients/logo1.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo10.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo11.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo12.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo13.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo14.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo15.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo16.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo17.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo18.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo19.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo20.jpg" alt="">
+                    <img loading="lazy" decoding="async" src="/clients/logo1.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo10.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo11.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo12.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo13.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo14.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo15.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo16.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo17.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo18.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo19.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo20.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -1131,7 +1142,7 @@
                     <a class="product-card" href="https://www.zoho.com/crm/" target="_blank" rel="noopener">
                         <div class="ribbon">Most Popular</div>
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-crm.png" alt="Zoho CRM"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-crm.png" alt="Zoho CRM"></div>
                             <div><h5>Zoho CRM</h5><div class="meta">Sales · Marketing · Service</div></div>
                         </div>
                         <p>Lead capture, pipeline, AI assistant Zia, mobile field sales, telephony &amp; dashboards — built for UAE B2B and B2C teams.</p>
@@ -1147,7 +1158,7 @@
                     <a class="product-card" href="https://www.zoho.com/books/" target="_blank" rel="noopener">
                         <div class="ribbon">Tax Ready</div>
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-books.png" alt="Zoho Books"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-books.png" alt="Zoho Books"></div>
                             <div><h5>Zoho Books</h5><div class="meta">Cloud Accounting</div></div>
                         </div>
                         <p>UAE-specific edition with 5% VAT, FTA-compliant tax returns, Corporate Tax tracking, multi-currency &amp; bank feeds.</p>
@@ -1162,7 +1173,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <a class="product-card" href="https://www.zoho.com/people/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-people.png" alt="Zoho People"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-people.png" alt="Zoho People"></div>
                             <div><h5>Zoho People</h5><div class="meta">HR Management</div></div>
                         </div>
                         <p>Core HR, attendance, leave, shift planning, performance reviews and employee self-service for UAE teams.</p>
@@ -1178,7 +1189,7 @@
                     <a class="product-card" href="https://www.zoho.com/payroll/" target="_blank" rel="noopener">
                         <div class="ribbon">WPS Ready</div>
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-payroll.png" alt="Zoho Payroll"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-payroll.png" alt="Zoho Payroll"></div>
                             <div><h5>Zoho Payroll</h5><div class="meta">Payroll &amp; Statutory</div></div>
                         </div>
                         <p>UAE Payroll edition: WPS SIF generation, gratuity (EOSB), GPSSA for UAE/GCC nationals — bilingual payslips.</p>
@@ -1193,7 +1204,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
                     <a class="product-card" href="https://www.zoho.com/inventory/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-inventory.png" alt="Zoho Inventory"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-inventory.png" alt="Zoho Inventory"></div>
                             <div><h5>Zoho Inventory</h5><div class="meta">Stock &amp; Order Management</div></div>
                         </div>
                         <p>Multi-warehouse stock, sales/purchase orders, serial &amp; batch tracking and shipping integrations.</p>
@@ -1208,7 +1219,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <a class="product-card" href="https://www.zoho.com/desk/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-desk.png" alt="Zoho Desk"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-desk.png" alt="Zoho Desk"></div>
                             <div><h5>Zoho Desk</h5><div class="meta">Customer Support</div></div>
                         </div>
                         <p>Omnichannel support — email, chat, WhatsApp, social, telephony — with SLAs, KB &amp; AI assist (Zia).</p>
@@ -1223,7 +1234,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <a class="product-card" href="https://www.zoho.com/creator/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-creator.png" alt="Zoho Creator"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-creator.png" alt="Zoho Creator"></div>
                             <div><h5>Zoho Creator</h5><div class="meta">Low-Code Platform</div></div>
                         </div>
                         <p>Custom apps, customer/vendor portals &amp; mobile apps with workflows (Deluge), APIs &amp; role-based access.</p>
@@ -1238,7 +1249,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
                     <a class="product-card" href="https://www.zoho.com/analytics/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-desk.png" alt="Zoho Analytics"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-desk.png" alt="Zoho Analytics"></div>
                             <div><h5>Zoho Analytics</h5><div class="meta">Self-Service BI</div></div>
                         </div>
                         <p>Blend Zoho + ERP/marketing/ad data, build dashboards, schedule refreshes and share insights securely.</p>
@@ -1253,7 +1264,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <a class="product-card" href="https://www.zoho.com/projects/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-projects.png" alt="Zoho Projects"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-projects.png" alt="Zoho Projects"></div>
                             <div><h5>Zoho Projects</h5><div class="meta">Project Management</div></div>
                         </div>
                         <p>Projects, tasks, Gantt, timesheets and team collaboration linked to CRM / Books / Desk.</p>
@@ -1268,7 +1279,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <a class="product-card" href="https://www.zoho.com/invoice/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-inventory.png" alt="Zoho Invoice"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-inventory.png" alt="Zoho Invoice"></div>
                             <div><h5>Zoho Invoice</h5><div class="meta">Invoicing &amp; Payments</div></div>
                         </div>
                         <p>Quotes, invoices in AED, online payments via Telr / N-Genius / PayTabs / Tabby, reminders &amp; bilingual templates.</p>
@@ -1728,8 +1739,8 @@
                     </div>
                     <p>Shyphan AI Middle East FZ-LLC is a certified Zoho Partner serving the UAE — offering CRM, ERP, HRMS and Payroll automation tailored to Mainland LLCs, Free Zone companies (DMCC, JAFZA, DIFC, ADGM, RAKEZ, IFZA) and SMEs. We help organizations across Dubai, Abu Dhabi, Sharjah, Ajman and beyond achieve digital transformation with VAT / FTA / WPS / EOSB-aware Zoho solutions.</p>
                     <div class="d-flex align-items-center gap-2 mt-3 flex-wrap">
-                        <img src="/assets/img/Auth.png" alt="Zoho Authorized Partner" style="height:44px; background:#fff; border-radius:8px; padding:4px;">
-                        <img src="/assets/img/iso-logo-1.png" alt="ISO Certified" width="44" style="background:#fff; border-radius:8px; padding:4px;">
+                        <img loading="lazy" decoding="async" src="/assets/img/Auth.png" alt="Zoho Authorized Partner" style="height:44px; background:#fff; border-radius:8px; padding:4px;">
+                        <img loading="lazy" decoding="async" src="/assets/img/iso-logo-1.png" alt="ISO Certified" width="44" style="background:#fff; border-radius:8px; padding:4px;">
                     </div>
                     <div class="socials mt-4">
                         <a href="https://www.linkedin.com/company/raqmiat-tech" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -1821,21 +1832,21 @@
                 </div>
                 <div class="rq-clients-title">Selected Clients We Work With</div>
                 <div class="rq-clients-grid">
-                    <div class="rq-client"><img src="/clients/logo1.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo10.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo11.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo12.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo13.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo14.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo15.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo16.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo17.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo1.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo10.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo11.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo12.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo13.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo14.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo15.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo16.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo17.jpg" alt=""></div>
                 </div>
             </div>
             <div class="rq-right">
                 <button type="button" class="rq-close" id="rqClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                 <div class="rq-partner-badges">
-                    <img class="auth-badge" src="/assets/img/Auth.png" alt="Zoho Authorized Partner">
+                    <img loading="lazy" decoding="async" class="auth-badge" src="/assets/img/Auth.png" alt="Zoho Authorized Partner">
                 </div>
                 <h3>Let's Talk About Your Project</h3>
                 <p class="rq-sub">Share a few details and our team will get back within 24 hours.</p>

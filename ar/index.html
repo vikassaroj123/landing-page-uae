@@ -68,7 +68,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+
+    <link rel="preload" as="image" href="/images/logo-color.png" fetchpriority="high">
 
     <script type="application/ld+json">
     {
@@ -291,6 +294,11 @@
             --radius-lg: 24px;
         }
         [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+        .compare-section, .services-section, .process-section, .industries-section,
+        .testimonials-section, .faq-section, .areas-section, footer {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 800px;
+        }
 
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -676,7 +684,7 @@
         <div class="container">
             <div class="nav-row">
                 <a href="/ar/" class="brand-left" aria-label="راقمية">
-                    <img src="/images/logo-color.png" alt="راقمية للتقنية">
+                    <img src="/images/logo-color.png" alt="راقمية للتقنية" fetchpriority="high" decoding="async" width="180" height="48">
                     <span class="brand-divider"></span>
                     <span class="brand-tag">شريك زوهو<br>الإمارات</span>
                 </a>
@@ -864,8 +872,8 @@
             <p class="text-center mb-4" style="color: var(--c-muted); font-size: 13px; font-weight: 600; letter-spacing: .04em;">موثوق به من قبل المؤسسات الرائدة في جميع أنحاء الإمارات</p>
             <div class="marquee-wrap">
                 <div class="marquee">
-                    <img src="/clients/logo1.jpg" alt=""><img src="/clients/logo10.jpg" alt=""><img src="/clients/logo11.jpg" alt=""><img src="/clients/logo12.jpg" alt=""><img src="/clients/logo13.jpg" alt=""><img src="/clients/logo14.jpg" alt=""><img src="/clients/logo15.jpg" alt=""><img src="/clients/logo16.jpg" alt=""><img src="/clients/logo17.jpg" alt=""><img src="/clients/logo18.jpg" alt=""><img src="/clients/logo19.jpg" alt=""><img src="/clients/logo20.jpg" alt="">
-                    <img src="/clients/logo1.jpg" alt=""><img src="/clients/logo10.jpg" alt=""><img src="/clients/logo11.jpg" alt=""><img src="/clients/logo12.jpg" alt=""><img src="/clients/logo13.jpg" alt=""><img src="/clients/logo14.jpg" alt=""><img src="/clients/logo15.jpg" alt=""><img src="/clients/logo16.jpg" alt=""><img src="/clients/logo17.jpg" alt=""><img src="/clients/logo18.jpg" alt=""><img src="/clients/logo19.jpg" alt=""><img src="/clients/logo20.jpg" alt="">
+                    <img loading="lazy" decoding="async" src="/clients/logo1.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo10.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo11.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo12.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo13.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo14.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo15.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo16.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo17.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo18.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo19.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo20.jpg" alt="">
+                    <img loading="lazy" decoding="async" src="/clients/logo1.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo10.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo11.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo12.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo13.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo14.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo15.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo16.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo17.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo18.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo19.jpg" alt=""><img loading="lazy" decoding="async" src="/clients/logo20.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -942,7 +950,7 @@
                     <a class="product-card" href="https://www.zoho.com/crm/" target="_blank" rel="noopener">
                         <div class="ribbon">الأكثر شعبية</div>
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-crm.png" alt="Zoho CRM"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-crm.png" alt="Zoho CRM"></div>
                             <div><h5>Zoho CRM</h5><div class="meta">المبيعات · التسويق · الخدمة</div></div>
                         </div>
                         <p>التقاط العملاء المحتملين، إدارة خط أنابيب المبيعات، مساعد الذكاء الاصطناعي Zia، المبيعات الميدانية، الاتصالات الهاتفية ولوحات المعلومات — مصمم لفرق B2B وB2C في الإمارات.</p>
@@ -958,7 +966,7 @@
                     <a class="product-card" href="https://www.zoho.com/books/" target="_blank" rel="noopener">
                         <div class="ribbon">جاهز للضرائب</div>
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-books.png" alt="Zoho Books"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-books.png" alt="Zoho Books"></div>
                             <div><h5>Zoho Books</h5><div class="meta">محاسبة سحابية</div></div>
                         </div>
                         <p>إصدار خاص بالإمارات مع 5% VAT، إقرارات ضريبية متوافقة مع الهيئة، تتبع ضريبة الشركات، عملات متعددة، وتغذية بنكية.</p>
@@ -973,7 +981,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <a class="product-card" href="https://www.zoho.com/people/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-people.png" alt="Zoho People"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-people.png" alt="Zoho People"></div>
                             <div><h5>Zoho People</h5><div class="meta">إدارة الموارد البشرية</div></div>
                         </div>
                         <p>HR الأساسية، الحضور، الإجازات، تخطيط الورديات، تقييم الأداء وخدمة الموظفين الذاتية لفرق الإمارات.</p>
@@ -989,7 +997,7 @@
                     <a class="product-card" href="https://www.zoho.com/payroll/" target="_blank" rel="noopener">
                         <div class="ribbon">جاهز لـ WPS</div>
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-payroll.png" alt="Zoho Payroll"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-payroll.png" alt="Zoho Payroll"></div>
                             <div><h5>Zoho Payroll</h5><div class="meta">الرواتب والامتثال</div></div>
                         </div>
                         <p>إصدار رواتب الإمارات: توليد ملفات SIF لـ WPS، مكافأة نهاية الخدمة (EOSB)، GPSSA لمواطني الإمارات/الخليج — قسائم رواتب ثنائية اللغة.</p>
@@ -1004,7 +1012,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
                     <a class="product-card" href="https://www.zoho.com/inventory/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-inventory.png" alt="Zoho Inventory"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-inventory.png" alt="Zoho Inventory"></div>
                             <div><h5>Zoho Inventory</h5><div class="meta">إدارة المخزون والطلبات</div></div>
                         </div>
                         <p>مخزون متعدد المستودعات، أوامر بيع/شراء، تتبع تسلسلي ودفعات، وتكاملات الشحن.</p>
@@ -1019,7 +1027,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <a class="product-card" href="https://www.zoho.com/desk/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-desk.png" alt="Zoho Desk"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-desk.png" alt="Zoho Desk"></div>
                             <div><h5>Zoho Desk</h5><div class="meta">دعم العملاء</div></div>
                         </div>
                         <p>دعم عملاء متعدد القنوات — البريد، الدردشة، WhatsApp، الشبكات الاجتماعية، الهاتف — مع SLA، قاعدة معرفة، ومساعد ذكاء اصطناعي (Zia).</p>
@@ -1034,7 +1042,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <a class="product-card" href="https://www.zoho.com/creator/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-creator.png" alt="Zoho Creator"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-creator.png" alt="Zoho Creator"></div>
                             <div><h5>Zoho Creator</h5><div class="meta">منصة Low-Code</div></div>
                         </div>
                         <p>تطبيقات مخصصة، بوابات عملاء/موردين وتطبيقات جوال مع سير عمل (Deluge)، APIs، ووصول قائم على الأدوار.</p>
@@ -1049,7 +1057,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
                     <a class="product-card" href="https://www.zoho.com/analytics/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-desk.png" alt="Zoho Analytics"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-desk.png" alt="Zoho Analytics"></div>
                             <div><h5>Zoho Analytics</h5><div class="meta">ذكاء أعمال ذاتي الخدمة</div></div>
                         </div>
                         <p>دمج بيانات Zoho + ERP/التسويق/الإعلانات، إنشاء لوحات معلومات، جدولة التحديثات ومشاركة الرؤى بشكل آمن.</p>
@@ -1064,7 +1072,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <a class="product-card" href="https://www.zoho.com/projects/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-projects.png" alt="Zoho Projects"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-projects.png" alt="Zoho Projects"></div>
                             <div><h5>Zoho Projects</h5><div class="meta">إدارة المشاريع</div></div>
                         </div>
                         <p>مشاريع، مهام، Gantt، جداول زمنية، وتعاون فريقي مرتبط بـ CRM / Books / Desk.</p>
@@ -1079,7 +1087,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <a class="product-card" href="https://www.zoho.com/invoice/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img src="/assets/img/zoho/zoho-inventory.png" alt="Zoho Invoice"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-inventory.png" alt="Zoho Invoice"></div>
                             <div><h5>Zoho Invoice</h5><div class="meta">الفوترة والمدفوعات</div></div>
                         </div>
                         <p>عروض أسعار، فواتير بالدرهم، مدفوعات أونلاين عبر Telr / N-Genius / PayTabs / Tabby، تذكيرات وقوالب ثنائية اللغة.</p>
@@ -1446,8 +1454,8 @@
                     </div>
                     <p>راقمية للتقنية هي شريك Zoho معتمد يخدم الإمارات — تقدم أتمتة CRM و ERP و HRMS والرواتب مصممة لشركات Mainland LLC والمناطق الحرة (DMCC، JAFZA، DIFC، ADGM، RAKEZ، IFZA) والشركات الصغيرة والمتوسطة. نساعد المؤسسات في دبي وأبوظبي والشارقة وعجمان وما بعدها على تحقيق التحول الرقمي بحلول Zoho المتوافقة مع VAT / FTA / WPS / EOSB.</p>
                     <div class="d-flex align-items-center gap-2 mt-3 flex-wrap">
-                        <img src="/assets/img/Auth.png" alt="شريك زوهو المعتمد" style="height:44px; background:#fff; border-radius:8px; padding:4px;">
-                        <img src="/assets/img/iso-logo-1.png" alt="معتمد ISO" width="44" style="background:#fff; border-radius:8px; padding:4px;">
+                        <img loading="lazy" decoding="async" src="/assets/img/Auth.png" alt="شريك زوهو المعتمد" style="height:44px; background:#fff; border-radius:8px; padding:4px;">
+                        <img loading="lazy" decoding="async" src="/assets/img/iso-logo-1.png" alt="معتمد ISO" width="44" style="background:#fff; border-radius:8px; padding:4px;">
                     </div>
                     <div class="socials mt-4">
                         <a href="https://www.linkedin.com/company/raqmiat-tech" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -1535,21 +1543,21 @@
                 <div class="rq-author"><div class="rq-avatar">أم</div><div><div class="rq-name">أحمد آل مكتوم</div><div class="rq-role">المدير التنفيذي · دبي — التجزئة والتوزيع</div></div></div>
                 <div class="rq-clients-title">عملاء مختارون نعمل معهم</div>
                 <div class="rq-clients-grid">
-                    <div class="rq-client"><img src="/clients/logo1.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo10.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo11.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo12.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo13.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo14.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo15.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo16.jpg" alt=""></div>
-                    <div class="rq-client"><img src="/clients/logo17.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo1.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo10.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo11.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo12.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo13.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo14.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo15.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo16.jpg" alt=""></div>
+                    <div class="rq-client"><img loading="lazy" decoding="async" src="/clients/logo17.jpg" alt=""></div>
                 </div>
             </div>
             <div class="rq-right">
                 <button type="button" class="rq-close" id="rqClose" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
                 <div class="rq-partner-badges">
-                    <img class="auth-badge" src="/assets/img/Auth.png" alt="شريك زوهو المعتمد">
+                    <img loading="lazy" decoding="async" class="auth-badge" src="/assets/img/Auth.png" alt="شريك زوهو المعتمد">
                 </div>
                 <h3>دعنا نتحدث عن مشروعك</h3>
                 <p class="rq-sub">شارك بعض التفاصيل وسيتواصل فريقنا معك خلال 24 ساعة.</p>
