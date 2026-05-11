@@ -74,7 +74,7 @@
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-    <link rel="preload" as="image" href="/images/logo-color.png" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/logo-color.webp" fetchpriority="high">
 
     <script type="application/ld+json">
     {
@@ -385,7 +385,7 @@
         .hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(800px 500px at 50% 0%, rgba(70,138,199,.18), transparent 70%); pointer-events: none; }
         .hero-skyline { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 220px; pointer-events: none; z-index: 1; opacity: .9; }
         @media (max-width: 991px) { .hero-skyline { height: 140px; opacity: .55; } }
-        @media (max-width: 575px) { .hero-skyline { height: 100px; opacity: .45; } }
+        @media (max-width: 575px) { .hero-skyline { display: none; } }
         .hero .container { position: relative; z-index: 2; }
         .hero .badge-pill { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,.08); border: 1px solid rgba(245,185,66,.35); color: #ffe9bd; padding: 9px 18px; border-radius: 999px; font-size: 13px; font-weight: 700; backdrop-filter: blur(14px); box-shadow: 0 6px 22px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.08); }
         .hero .badge-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: #f5b942; box-shadow: 0 0 0 4px rgba(245,185,66,.22); }
@@ -454,6 +454,32 @@
         .feature-card:hover .icon-wrap { transform: scale(1.06) rotate(3deg); }
         .feature-card h4 { font-size: 18px; margin-bottom: 10px; }
         .feature-card p { color: var(--c-muted); font-size: 14.5px; margin: 0; line-height: 1.85; }
+
+        /* ===== What is Zoho ===== */
+        .what-is-zoho-section { background: #fff; }
+        .wiz-title { font-size: clamp(28px, 3.6vw, 44px); letter-spacing: -.01em; margin: 0 0 22px; position: relative; display: inline-block; line-height: 1.25; }
+        .wiz-accent { position: relative; display: inline-block; }
+        .wiz-accent::after { content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 9px; background: linear-gradient(270deg, var(--c-accent), transparent); border-radius: 4px; opacity: .45; z-index: -1; }
+        .wiz-intro { color: #475569; font-size: 16.5px; line-height: 1.95; margin-bottom: 18px; }
+        .wiz-intro strong { color: var(--c-dark); font-weight: 700; }
+        .wiz-img { border-radius: var(--radius-lg); width: 100%; box-shadow: var(--shadow-lg); border: 1px solid var(--c-hairline); display: block; }
+
+        .why-zoho-best { margin-top: 70px; }
+        .wiz-subtitle { font-size: clamp(24px, 3vw, 36px); color: var(--c-dark); letter-spacing: -.005em; line-height: 1.35; }
+        .wiz-zoho-mark { background: var(--grad-cta); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800; }
+        .benefit-card { background: #fff; border: 1px solid var(--c-hairline); border-radius: var(--radius); padding: 28px 22px; height: 100%; text-align: center; transition: .3s; position: relative; overflow: hidden; }
+        .benefit-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--c-primary), var(--c-accent)); transform: scaleX(0); transform-origin: center; transition: transform .35s ease; }
+        .benefit-card:hover { transform: translateY(-7px); box-shadow: var(--shadow-lg); border-color: rgba(70,138,199,.22); }
+        .benefit-card:hover::before { transform: scaleX(1); }
+        .benefit-ico { width: 64px; height: 64px; border-radius: 18px; background: linear-gradient(135deg, var(--c-primary-soft), var(--c-accent-soft)); color: var(--c-primary-2); display: grid; place-items: center; margin: 0 auto 18px; font-size: 26px; box-shadow: inset 0 1px 0 rgba(255,255,255,.6); transition: transform .3s ease; }
+        .benefit-card:hover .benefit-ico { transform: scale(1.08) rotate(4deg); background: linear-gradient(135deg, var(--c-primary), var(--c-accent)); color: #fff; }
+        .benefit-card h4 { font-size: 17px; margin-bottom: 8px; font-weight: 700; color: var(--c-dark); line-height: 1.45; }
+        .benefit-card p { color: var(--c-muted); font-size: 14.5px; margin: 0; line-height: 1.85; }
+        @media (max-width: 767px) {
+            .why-zoho-best { margin-top: 50px; }
+            .wiz-title { margin-bottom: 16px; }
+            .benefit-card { padding: 24px 18px; }
+        }
 
         .why-card { background: #fff; padding: 22px; border-radius: 16px; border: 1px solid var(--c-hairline); display: flex; gap: 16px; align-items: flex-start; transition: .3s; }
         .why-card:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(12,28,48,.08); border-color: rgba(70,138,199,.22); }
@@ -687,7 +713,7 @@
         <div class="container">
             <div class="nav-row">
                 <a href="/ar/" class="brand-left" aria-label="راقمية">
-                    <img src="/images/logo-color.png" alt="راقمية للتقنية" fetchpriority="high" decoding="async" width="180" height="48">
+                    <img src="/images/logo-color.webp" alt="راقمية للتقنية" fetchpriority="high" decoding="async" width="180" height="48">
                     <span class="brand-divider"></span>
                     <span class="brand-tag">شريك زوهو<br>الإمارات</span>
                 </a>
@@ -725,7 +751,7 @@
     <div class="mobile-overlay" id="mobileOverlay"></div>
     <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
         <div class="mm-head">
-            <img src="/images/logo-color.png" alt="راقمية للتقنية">
+            <img src="/images/logo-color.webp" alt="راقمية للتقنية">
             <button class="mm-close" id="mmClose" aria-label="إغلاق القائمة"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <a href="#products" class="mm-link mm-close-on-click"><i class="fa-solid fa-grip-vertical"></i> المنتجات</a>
@@ -884,6 +910,75 @@
         </div>
     </section>
 
+    <!-- What is Zoho -->
+    <section class="what-is-zoho-section section-pad" id="what-is-zoho">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7">
+                    <h2 class="section-title wiz-title">ما هو <span class="wiz-accent">زوهو؟</span></h2>
+                    <p class="wiz-intro">زوهو هي منصة أعمال سحابية قوية مصممة لمساعدة الشركات على إدارة المبيعات والمالية والعمليات والموارد البشرية وعلاقات العملاء من نظام موحد واحد.</p>
+                    <p class="wiz-intro">مع <strong>أكثر من 45 تطبيقًا متكاملًا</strong>، تتيح زوهو للشركات تبسيط سير العمل، وأتمتة العمليات، والحصول على رؤية كاملة عبر الأقسام — مما يساعدها على العمل بكفاءة أكبر والتوسع بسرعة أكبر.</p>
+                </div>
+                <div class="col-lg-5">
+                    <img loading="lazy" decoding="async"
+                         src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=700&q=80"
+                         alt="استشارة أعمال في الإمارات — تنفيذ زوهو من راقمية للتقنية"
+                         class="wiz-img" width="700" height="467">
+                </div>
+            </div>
+
+            <div class="why-zoho-best">
+                <div class="text-center mb-5">
+                    <h3 class="wiz-subtitle">لماذا تعتبر <span class="wiz-zoho-mark">زوهو</span> الأفضل؟</h3>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="benefit-card">
+                            <div class="benefit-ico"><i class="fa-solid fa-users"></i></div>
+                            <h4>أكثر من 150 مليون مستخدم عالميًا</h4>
+                            <p>زوهو موثوق به من قبل ملايين المستخدمين في مختلف الصناعات حول العالم.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="benefit-card">
+                            <div class="benefit-ico"><i class="fa-solid fa-chart-line"></i></div>
+                            <h4>يعزز كفاءة الأعمال</h4>
+                            <p>تشير الشركات التي تستخدم زوهو إلى تحسن الأتمتة وتبسيط العمليات.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="benefit-card">
+                            <div class="benefit-ico"><i class="fa-solid fa-earth-asia"></i></div>
+                            <h4>أكثر من 700,000 شركة عالميًا</h4>
+                            <p>تدعم زوهو الشركات في أكثر من 150 دولة حول العالم.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="benefit-card">
+                            <div class="benefit-ico"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                            <h4>قابل للتوسع مع نمو الأعمال</h4>
+                            <p>تتكيف زوهو مع أعمالك أثناء نموها — لا حاجة لتغيير الأنظمة.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="benefit-card">
+                            <div class="benefit-ico"><i class="fa-solid fa-cubes"></i></div>
+                            <h4>أكثر من 45 تطبيقًا متكاملًا</h4>
+                            <p>من CRM إلى المحاسبة والموارد البشرية والتطبيقات المخصصة — كل شيء يعمل معًا.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="benefit-card">
+                            <div class="benefit-ico"><i class="fa-solid fa-thumbs-up"></i></div>
+                            <h4>تجربة عملاء أفضل</h4>
+                            <p>الأنظمة المتكاملة تساعد على تقديم استجابات أسرع وجودة خدمة محسّنة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Features -->
     <section class="section-pad" id="features">
         <div class="container">
@@ -955,7 +1050,7 @@
                     <a class="product-card" href="https://www.zoho.com/crm/" target="_blank" rel="noopener">
                         <div class="ribbon">الأكثر شعبية</div>
                         <div class="head">
-                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-crm.png" alt="Zoho CRM"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-crm.webp" alt="Zoho CRM"></div>
                             <div><h5>Zoho CRM</h5><div class="meta">المبيعات · التسويق · الخدمة</div></div>
                         </div>
                         <p>التقاط العملاء المحتملين، إدارة خط أنابيب المبيعات، مساعد الذكاء الاصطناعي Zia، المبيعات الميدانية، الاتصالات الهاتفية ولوحات المعلومات — مصمم لفرق B2B وB2C في الإمارات.</p>
@@ -971,7 +1066,7 @@
                     <a class="product-card" href="https://www.zoho.com/books/" target="_blank" rel="noopener">
                         <div class="ribbon">جاهز للضرائب</div>
                         <div class="head">
-                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-books.png" alt="Zoho Books"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-books.webp" alt="Zoho Books"></div>
                             <div><h5>Zoho Books</h5><div class="meta">محاسبة سحابية</div></div>
                         </div>
                         <p>إصدار خاص بالإمارات مع 5% VAT، إقرارات ضريبية متوافقة مع الهيئة، تتبع ضريبة الشركات، عملات متعددة، وتغذية بنكية.</p>
@@ -1017,7 +1112,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
                     <a class="product-card" href="https://www.zoho.com/inventory/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-inventory.png" alt="Zoho Inventory"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-inventory.webp" alt="Zoho Inventory"></div>
                             <div><h5>Zoho Inventory</h5><div class="meta">إدارة المخزون والطلبات</div></div>
                         </div>
                         <p>مخزون متعدد المستودعات، أوامر بيع/شراء، تتبع تسلسلي ودفعات، وتكاملات الشحن.</p>
@@ -1047,7 +1142,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <a class="product-card" href="https://www.zoho.com/creator/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-creator.png" alt="Zoho Creator"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-creator.webp" alt="Zoho Creator"></div>
                             <div><h5>Zoho Creator</h5><div class="meta">منصة Low-Code</div></div>
                         </div>
                         <p>تطبيقات مخصصة، بوابات عملاء/موردين وتطبيقات جوال مع سير عمل (Deluge)، APIs، ووصول قائم على الأدوار.</p>
@@ -1092,7 +1187,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <a class="product-card" href="https://www.zoho.com/invoice/" target="_blank" rel="noopener">
                         <div class="head">
-                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-inventory.png" alt="Zoho Invoice"></div>
+                            <div class="logo-box"><img loading="lazy" decoding="async" src="/assets/img/zoho/zoho-inventory.webp" alt="Zoho Invoice"></div>
                             <div><h5>Zoho Invoice</h5><div class="meta">الفوترة والمدفوعات</div></div>
                         </div>
                         <p>عروض أسعار، فواتير بالدرهم، مدفوعات أونلاين عبر Telr / N-Genius / PayTabs / Tabby، تذكيرات وقوالب ثنائية اللغة.</p>
@@ -1455,12 +1550,12 @@
             <div class="row g-5">
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="footer-brand mb-3">
-                        <img src="/images/logo-color.png" alt="راقمية للتقنية" style="height: 44px; background: #fff; padding: 6px 10px; border-radius: 10px;">
+                        <img src="/images/logo-color.webp" alt="راقمية للتقنية" style="height: 44px; background: #fff; padding: 6px 10px; border-radius: 10px;">
                     </div>
                     <p>راقمية للتقنية هي شريك Zoho معتمد يخدم الإمارات — تقدم أتمتة CRM و ERP و HRMS والرواتب مصممة لشركات Mainland LLC والمناطق الحرة (DMCC، JAFZA، DIFC، ADGM، RAKEZ، IFZA) والشركات الصغيرة والمتوسطة. نساعد المؤسسات في دبي وأبوظبي والشارقة وعجمان وما بعدها على تحقيق التحول الرقمي بحلول Zoho المتوافقة مع VAT / FTA / WPS / EOSB.</p>
                     <div class="d-flex align-items-center gap-2 mt-3 flex-wrap">
                         <img loading="lazy" decoding="async" src="/assets/img/Auth.png" alt="شريك زوهو المعتمد" style="height:44px; background:#fff; border-radius:8px; padding:4px;">
-                        <img loading="lazy" decoding="async" src="/assets/img/iso-logo-1.png" alt="معتمد ISO" width="44" style="background:#fff; border-radius:8px; padding:4px;">
+                        <img loading="lazy" decoding="async" src="/assets/img/iso-logo-1.webp" alt="معتمد ISO" width="44" style="background:#fff; border-radius:8px; padding:4px;">
                     </div>
                     <div class="socials mt-4">
                         <a href="https://www.linkedin.com/company/raqmiat-tech" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -1744,8 +1839,8 @@
             iframe.addEventListener('load', () => { if (submitted) { showSuccess(); submitted = false; } });
         })();
 
-        // ===== نموذج التواصل المنبثق (يفتح كل 40 ثانية إذا لم يُملأ) =====
-        (function () {
+        // ===== نموذج التواصل المنبثق (يفتح كل 40 ثانية إذا لم يُملأ) — مؤجل حتى الخمول لتسريع الرسم الأول =====
+        const initLeadModal = () => {
             const overlay = document.getElementById('rqModalOverlay');
             const modal = document.getElementById('rqModal');
             const closeBtn = document.getElementById('rqClose');
@@ -1801,7 +1896,12 @@
                 setTimeout(() => { if (submitted && !success.classList.contains('show')) showSuccessMsg(); }, 1200);
             });
             iframe.addEventListener('load', () => { if (submitted) { showSuccessMsg(); submitted = false; } });
-        })();
+        };
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(initLeadModal, { timeout: 2000 });
+        } else {
+            setTimeout(initLeadModal, 1);
+        }
     </script>
 </body>
 </html>
